@@ -6,7 +6,6 @@ const App = () => {
 	const [secret, setSecret] = useState(Math.floor(Math.random() * 10));
 	const [userInput, setUserInput] = useState(0);
 	const [round, setRound] = useState(1);
-	const [msg, setMsg] = useState("");
 
 	const checkRound = round < 5;
 	const checkWin = +userInput === secret;
@@ -30,25 +29,11 @@ const App = () => {
 	const submit = () => {
 		setRound(round + 1);
 		checkWinning();
-		// console.log(secret);
-		// console.log(userInput);
-		console.log(`secret number: ${secret}`);
-		console.log(`round: ${round}`);
+		// console.log(`secret number: ${secret}`);
+		// console.log(`round: ${round}`);
 	};
 
-	// console.log(`round: ${round}`);
-
-	return (
-		<Home
-			submit={submit}
-			setUserInput={setUserInput}
-			msg={msg}
-			round={round}
-			checkRound={checkRound}
-			setRound={setRound}
-			chechWin={checkWin}
-		/>
-	);
+	return <Home submit={submit} setUserInput={setUserInput} round={round} />;
 };
 
 export default App;
